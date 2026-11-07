@@ -1,0 +1,39 @@
+/* Each service has its own photographic composition. */
+#pre-weddings .photo-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr; height: 470px; padding-block: 28px; gap: 12px; }
+#pre-weddings .tile-0 { grid-column: 1; grid-row: 1; }
+#pre-weddings .tile-1 { grid-column: 2; grid-row: 1; transform: translateY(-24px); }
+#pre-weddings .tile-2 { grid-column: 3; grid-row: 1; transform: translateY(24px); }
+
+#birthdays .photo-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1.2fr .8fr; height: 520px; gap: 12px; }
+#birthdays .tile-0 { grid-column: 1 / -1; grid-row: 1; }
+#birthdays .tile-1 { grid-column: 1; grid-row: 2; }
+#birthdays .tile-2 { grid-column: 2; grid-row: 2; }
+
+#engagements .photo-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1.6fr 1fr; height: 510px; gap: 12px; }
+#engagements .tile-0 { grid-column: 1 / -1; grid-row: 1; }
+#engagements .tile-1 { grid-column: 1; grid-row: 2; }
+#engagements .tile-2 { grid-column: 2; grid-row: 2; }
+#engagements .tile-3 { grid-column: 3; grid-row: 2; }
+
+#maternity-baby .photo-grid { grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(6, 1fr); height: 530px; gap: 12px; }
+#maternity-baby .tile-0 { grid-column: 1 / 5; grid-row: 1 / -1; }
+#maternity-baby .tile-1 { grid-column: 4 / 6; grid-row: 2 / 4; }
+#maternity-baby .tile-2 { grid-column: 4 / 6; grid-row: 4 / 6; }
+#maternity-baby .tile-1, #maternity-baby .tile-2 { z-index: 1; border: 5px solid #fff; box-shadow: 0 10px 24px #26382f1c; }
+
+#events .photo-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: 480px; gap: 14px; }
+#events .tile-0 { grid-column: 1; grid-row: 1; }
+#events .tile-1 { grid-column: 2; grid-row: 1; }
+#events .tile-2 { grid-column: 1; grid-row: 2; }
+#events .tile-3 { grid-column: 2; grid-row: 2; }
+
+@media (max-width: 700px) {
+  #pre-weddings .photo-grid { height: clamp(290px, 88vw, 420px); gap: 8px; }
+  #pre-weddings .tile-1 { transform: translateY(-18px); }
+  #pre-weddings .tile-2 { transform: translateY(18px); }
+  #birthdays .photo-grid { height: clamp(360px, 100vw, 490px); gap: 8px; }
+  #engagements .photo-grid { height: clamp(350px, 98vw, 480px); gap: 8px; }
+  #maternity-baby .photo-grid { height: clamp(370px, 105vw, 510px); gap: 8px; }
+  #maternity-baby .tile-1, #maternity-baby .tile-2 { border-width: 4px; }
+  #events .photo-grid { height: clamp(320px, 90vw, 460px); gap: 10px; }
+}

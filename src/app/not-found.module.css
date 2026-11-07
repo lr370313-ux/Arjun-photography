@@ -1,0 +1,5 @@
+.error { text-align: center; padding: 60px 6% 100px; background: #fbf8ef; }
+.number { font-family: Editorial, Georgia, serif; font-size: clamp(110px, 18vw, 220px); line-height: 1; color: #95652f; }
+.error h1 { font-size: clamp(44px, 6vw, 76px); line-height: 1.1; margin: 20px 0; }
+.error > p:last-of-type { max-width: 50ch; margin-inline: auto; }
+.actions { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 32px; }

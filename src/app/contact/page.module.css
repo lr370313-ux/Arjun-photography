@@ -1,0 +1,36 @@
+.page { background: #fbf8ef; }
+.contact, .enquiry { width: min(88%, var(--desktop-content, 1240px)); margin-inline: auto; padding-block: clamp(56px, 6vw, 100px); }
+.intro { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 8%; margin-bottom: 48px; }
+.intro p { max-width: 48ch; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.card { display: flex; flex-direction: column; gap: 24px; padding: clamp(24px, 2.5vw, 44px); min-height: 440px; border: 1px solid #d5dcca; border-radius: 28px; background: #fffefa; }
+.cardTop { display: flex; justify-content: space-between; align-items: center; gap: 16px; color: #596f56; }
+.cardTop span { text-transform: uppercase; letter-spacing: .06em; }
+.cardTop svg { width: 32px; height: 32px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.card h3 { font-size: clamp(30px, 2.5vw, 42px); line-height: 1.15; margin-top: 12px; }
+.detail { overflow-wrap: anywhere; }
+.action { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-top: auto; border-top: 1px solid #d5dcca; padding-top: 24px; min-height: 52px; }
+.location { background: #184c39; color: #f9f3e3; border-color: #184c39; }
+.location h3 { color: inherit; }
+.location .cardTop { color: #e7c68a; }
+.location .action { border-color: #ffffff40; }
+.location address { font-style: normal; }
+.enquiry { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 5vw, 80px); align-items: start; border-top: 1px solid #d5dcca; }
+.copy h2 { margin: 16px 0 24px; }
+.copy p + p { margin-top: 20px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; color: var(--heading-accent); }
+.form { padding: clamp(24px, 3vw, 48px); background: white; border: 1px solid #e3e3d8; border-radius: 24px; min-width: 0; }
+.form :global(.form-row) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 1000px) {
+  .cards { gap: 16px; }
+  .card { padding: 24px; }
+  .cardTop { flex-wrap: wrap; }
+  .enquiry { grid-template-columns: minmax(0, 1fr); }
+  .copy { max-width: 60ch; }
+}
+@media (max-width: 740px) {
+  .intro, .cards { grid-template-columns: minmax(0, 1fr); }
+  .intro { gap: 24px; }
+  .card { min-height: 360px; }
+  .form :global(.form-row) { grid-template-columns: minmax(0, 1fr); }
+}

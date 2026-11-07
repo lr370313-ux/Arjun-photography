@@ -1,0 +1,13 @@
+html.lenis { scroll-behavior: auto !important; }
+
+[data-scroll-reveal] {
+  transition: opacity .9s cubic-bezier(.22, 1, .36, 1), transform .9s cubic-bezier(.22, 1, .36, 1);
+}
+[data-scroll-reveal="pending"] { opacity: .15; transform: translate3d(0, 28px, 0); }
+[data-scroll-reveal="visible"] { opacity: 1; transform: translate3d(0, 0, 0); }
+.photo-grid[data-scroll-reveal] { transition-delay: 70ms; }
+[data-scroll-reveal]:focus-within { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-reveal] { opacity: 1; transform: none; transition: none; }
+}

@@ -1,0 +1,116 @@
+.page { background: #fbf8ef; }
+.hero, .story, .photographer, .team, .behind {
+  width: min(90%, var(--desktop-content, 1240px));
+  margin-inline: auto;
+}
+.hero, .photographer, .story {
+  display: grid;
+  gap: clamp(28px, 6vw, 108px);
+  align-items: center;
+}
+.hero {
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  padding-block: clamp(32px, 5vw, 80px);
+}
+.hero h1 {
+  font-size: clamp(64px, 7vw, 120px);
+  line-height: .98;
+  margin-block: 18px 24px;
+}
+.hero h1 em { display: block; }
+.hero img { aspect-ratio: 4 / 3; height: auto; }
+.label { text-transform: uppercase; letter-spacing: .11em; color: var(--heading-accent); }
+.story, .photographer, .team, .behind { padding-block: clamp(48px, 7vw, 112px); }
+.story {
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+.page p { max-width: 58ch; }
+.story p + p { margin-top: 16px; }
+.photographer {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  padding-inline: clamp(20px, 4vw, 72px);
+  background: white;
+}
+.photographer img { aspect-ratio: 5 / 6; height: auto; }
+.photographer h2, .behind h2 { margin-block: 8px 20px; }
+.page :global(.text-link) { display: inline-block; margin-top: 24px; }
+.roles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 64px);
+  margin-block: 32px 0;
+}
+.roles > div { padding-top: 20px; border-top: 1px solid var(--line); }
+.roles dt { font-family: Editorial, Georgia, serif; font-size: 34px; color: var(--heading); }
+.roles dd { margin: 6px 0 0; }
+.approach {
+  background: #172c24;
+  color: #fbf8ef;
+  text-align: center;
+  padding: clamp(56px, 8vw, 132px) 6%;
+}
+.approach h2 { color: inherit; }
+.approach h2 em { color: #e7c68a; }
+.approach p { margin: 24px auto 0; }
+.gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 48px);
+  align-items: start;
+  margin-top: 32px;
+}
+.gallery figure { margin: 0; }
+.gallery figure:nth-child(2) { margin-top: 32px; }
+.gallery img { aspect-ratio: 4 / 5; height: auto; }
+.gallery figcaption { margin-top: 12px; }
+@media (max-width: 740px) {
+  .hero, .story, .photographer, .roles, .gallery { grid-template-columns: minmax(0, 1fr); }
+  .photographer > div { grid-row: 1; }
+  .gallery figure:nth-child(2) { margin-top: 0; }
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(780px, 85svh);
+  width: calc(100% - 12px);
+  padding: clamp(32px, 6vw, 110px);
+  background: #172c24;
+  color: white;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #10251fe6, #10251f20); }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; object-fit: cover; }
+.hero h1 { color: white; }
+.hero h1 em, .hero .label { color: #e7c68a; }
+.hero > div { max-width: 760px; }
+.hero { margin-top: 6px; padding-top: 150px; }
+.story:first-of-type { border: 0; }
+.story > div:first-child h2 { margin: 12px 0 28px; }
+.story > div:first-child img { width: 85%; aspect-ratio: 5 / 3; height: auto; }
+.story:has(#studio-story) { align-items: center; border: 0; }
+.extraParagraph { margin-top: 20px; }
+.team { text-align: center; }
+.roles { text-align: left; gap: 24px; }
+.roles > div { border: 0; background: white; padding: 0 0 28px; }
+.roles img { height: auto; aspect-ratio: 4 / 3; margin-bottom: 24px; }
+.roles dt, .roles dd { margin-inline: 24px; }
+.roles dd { margin-top: 8px; }
+.approach { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 100px); align-items: center; text-align: left; }
+.approach > img { height: auto; aspect-ratio: 4 / 5; max-height: 680px; }
+.approach h2 { margin-top: 18px; }
+.approach p { margin-inline: 0; }
+.approach .label { color: #e7c68a; }
+.approachNotes { display: flex; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid #ffffff40; padding-top: 24px; margin-top: 32px; }
+@media (max-width: 740px) {
+  .hero { min-height: 70svh; }
+  .hero h1 { font-size: clamp(54px, 13vw, 86px); }
+  .story > div:first-child img { width: 100%; }
+  .approach { grid-template-columns: minmax(0, 1fr); }
+  .approach > img { aspect-ratio: 4 / 3; }
+}

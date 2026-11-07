@@ -1,0 +1,42 @@
+.page { background: #fbf8ef; }
+.hero { position: relative; isolation: isolate; display: flex; align-items: flex-end; min-height: min(780px, 85svh); margin: 6px; padding: 150px 7% 72px; border-radius: 18px; overflow: hidden; background: #172c24; color: white; }
+.hero > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #10251fe6, #10251f25), linear-gradient(#10251e70, transparent); }
+.hero h1 { font-size: clamp(64px, 7vw, 120px); line-height: 1; color: white; margin: 20px 0 24px; }
+.hero h1 em, .hero .label { color: #e7c68a; }
+.label { font-size: 16px; text-transform: uppercase; letter-spacing: .1em; }
+.link { display: inline-flex; align-items: center; gap: 24px; min-height: 44px; margin-top: 20px; border-bottom: 1px solid currentColor; font-size: 16px; }
+.services { width: min(88%, var(--desktop-content, 1240px)); margin: auto; padding: clamp(56px, 7vw, 110px) 0; }
+.intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 56px; }
+.intro p { max-width: 43ch; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.card { position: relative; isolation: isolate; display: flex; align-items: flex-end; min-height: clamp(500px, 39vw, 710px); overflow: hidden; border-radius: 28px; background: #172c24; color: white; }
+.image { position: absolute; inset: 0; z-index: -2; }
+.image img { transition: transform .7s ease; }
+.card:hover .image img { transform: scale(1.04); }
+.card::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 20%, #10231b55 40%, #10231bf0 100%); }
+.cardContent { width: 100%; padding: clamp(24px, 2vw, 38px); }
+.cardContent h3 { color: white; font-size: clamp(30px, 2.2vw, 40px); line-height: 1.1; margin-bottom: 16px; }
+.cardContent p { font-size: 16px; line-height: 1.65; }
+.cardButton { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 26px; padding: 10px 20px; border-radius: 9px; background: #e7c68a; color: #172c24; font-size: 16px; transition: background .2s; }
+.cardButton:hover { background: #f3d9a9; }
+.enquiryCard { align-items: center; background: #26382f; }
+.enquiryCard::after { display: none; }
+.enquiryCard h3 { color: #e7c68a; font-size: clamp(42px, 3.4vw, 64px); }
+.cardActions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 28px; }
+.cardActions .cardButton { margin-top: 0; }
+.secondaryButton { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 0; border-bottom: 1px solid #ffffff70; font-size: 16px; }
+@media (max-width: 1050px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cta { padding: clamp(64px, 8vw, 120px) 6%; text-align: center; background: #ece7d9; }
+.cta h2 { margin: 20px 0; }
+.cta > p { max-width: 54ch; margin-inline: auto; }
+.button { display: inline-flex; align-items: center; gap: 42px; min-height: 52px; margin-top: 32px; padding: 12px 28px; border-radius: 40px; background: #26382f; color: white; }
+@media (max-width: 740px) {
+  .hero { min-height: 70svh; padding-bottom: 44px; }
+  .hero h1 { font-size: clamp(54px, 13vw, 86px); }
+  .intro { display: block; }
+  .intro p { margin-top: 20px; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .image img { transition: none; } }
+

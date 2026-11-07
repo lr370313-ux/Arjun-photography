@@ -1,0 +1,44 @@
+.testimonials-glass {
+  position: relative;
+  max-width: none;
+  margin: 48px 6px;
+  padding: 64px clamp(22px, 4.5vw, 76px) 36px;
+  border-radius: 30px;
+  color: #f7f3e8;
+  background: linear-gradient(110deg, #10261ee8, #10261ecc 55%, #10261ee0), url('/images/indian-wedding-poster.jpg') center 42% / cover;
+  overflow: hidden;
+  isolation: isolate;
+}
+.testimonials-glass > .eyebrow { color: #e5dfcc; font-size: 16px; letter-spacing: 1.5px; }
+.testimonials-glass h2 { margin: 20px 0 0; font-size: clamp(42px, 4.6vw, 64px); line-height: 1.08; }
+.testimonials-glass h2 span { color: #e4bd7b; }
+.testimonials-glass h2 em { color: #fffdf7; }
+.testimonial-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 1440px; margin: 68px auto 0; text-align: left; }
+.testimonial-glass-card { position: relative; display: flex; flex-direction: column; margin: 0; padding: 38px 28px 26px; border: 1px solid #ffffff45; border-radius: 24px; background: linear-gradient(135deg, #ffffff22, #ffffff0d); backdrop-filter: blur(12px); box-shadow: 0 12px 30px #0000001c; animation: reviews-arrive .5s ease; }
+.testimonial-initials { position: absolute; left: 28px; top: -25px; display: grid; place-items: center; width: 50px; height: 50px; border: 4px solid #68856c; border-radius: 50%; background: #f0ead5; color: #234735; font: 600 16px/1 Inter, sans-serif; }
+.testimonial-quote { position: absolute; right: 22px; top: 7px; color: #e4bd7ba6; font-family: Editorial, Georgia, serif; font-size: 58px; line-height: 1; }
+.testimonial-glass-card blockquote { margin: 0; flex: 1; }
+.testimonial-glass-card blockquote p { color: #fffdf5; font: 400 16px/1.8 Inter, sans-serif; }
+.testimonial-glass-card figcaption { margin-top: 22px; padding-top: 17px; border-top: 1px solid #ffffff29; }
+.testimonial-name { display: block; font-family: Editorial, Georgia, serif; font-size: 26px; font-weight: 600; line-height: 1.2; color: #e4bd7b; }
+.testimonial-sample { display: block; margin-top: 8px; color: #d8ded2; font: 400 16px/1.6 Inter, sans-serif; }
+.testimonial-controls { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
+.testimonial-controls button { display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border: 1px solid #ffffff59; border-radius: 50%; background: #ffffff0a; color: #fffdf5; font: 400 23px/1 Inter, sans-serif; transition: background .2s; }
+.testimonial-controls button:hover { background: #ffffff20; }
+.testimonial-controls button:focus-visible { outline-color: #e4bd7b; }
+.testimonial-controls svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.testimonial-controls-label { color: #e0e4d8; font-size: 16px; }
+@keyframes reviews-arrive { from { opacity: .3; transform: translate3d(0, 12px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@media (max-width: 1100px) { .testimonial-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) {
+  .testimonials-glass { margin: 28px 6px; padding: 46px 22px 28px; border-radius: 24px; }
+  .testimonials-glass h2 { font-size: clamp(40px, 10vw, 54px); }
+  .testimonial-cards { grid-template-columns: 1fr; margin-top: 56px; }
+  .testimonial-glass-card { padding: 38px 23px 24px; }
+  .testimonial-controls { gap: 12px; }
+  .testimonial-controls-label { order: -1; flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .testimonial-glass-card { animation: none; } .testimonial-controls button { transition: none; } }
+
+
+

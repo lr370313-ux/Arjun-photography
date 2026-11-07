@@ -1,0 +1,42 @@
+.service-stack { position: relative; isolation: isolate; }
+.service-stack > .collection {
+  position: sticky;
+  top: min(0px, calc(100svh - var(--service-height, 100svh)));
+  background: #fdf7e9;
+  box-shadow: none;
+  border-top: 1px solid #95652f33;
+  border-radius: 0;
+  scroll-margin-top: 0;
+}
+.service-stack > .collection.reverse { background: #fff; }
+.service-stack > .collection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  box-shadow: 0 -8px 20px #26382f1f, 0 -20px 44px #26382f14;
+  clip-path: inset(-65px 0 0 0);
+  pointer-events: none;
+}
+.service-stack > .collection:first-child::before { display: none; }
+.service-stack > .collection:first-child {
+  box-shadow: none;
+  border-top: 0;
+  border-radius: 0;
+}
+
+.service-stack .collection-inner {
+  --service-enter: 1;
+  transform-origin: center top;
+  transform: translate3d(0, calc((1 - var(--service-enter)) * 72px), 0) scale(calc(.5 + var(--service-enter) * .5));
+}
+.service-stack .collection-inner:focus-within { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .service-stack > .collection { position: relative; top: auto; }
+  .service-stack .collection-inner { transform: none; }
+}
+
+

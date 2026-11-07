@@ -1,0 +1,34 @@
+/* Keep the established layouts proportionate on full-size desktop monitors. */
+@media (min-width: 1600px) {
+  :root { --desktop-content: min(84vw, 1800px); }
+  .header.header-fixed { padding-inline: max(3%, calc((100vw - 1900px) / 2)); }
+  .cinematic-copy { left: max(7%, calc((100% - var(--desktop-content)) / 2)); max-width: min(1100px, 70vw); }
+  .cinematic-copy h1 { font-size: clamp(84px, 5vw, 112px); }
+
+  .about-story__inner { max-width: var(--desktop-content); padding: 96px 0 88px; gap: 8%; }
+  .about-story__collage { grid-template-rows: clamp(325px, 18vw, 400px) clamp(240px, 14vw, 300px); }
+  .about-story__copy > p:not(.about-story__label) { max-width: 48ch; }
+
+  .collection { padding-block: clamp(76px, 5vw, 110px); }
+  .collection-inner { max-width: var(--desktop-content); }
+  .collection h2 { font-size: clamp(48px, 3vw, 60px); }
+  .collection .description { max-width: 46ch; }
+  .collection .photo-grid { height: clamp(555px, 34vw, 720px); }
+  #pre-weddings .photo-grid { height: clamp(470px, 30vw, 620px); }
+  #birthdays .photo-grid { height: clamp(520px, 33vw, 680px); }
+  #engagements .photo-grid { height: clamp(510px, 32vw, 660px); }
+  #maternity-baby .photo-grid { height: clamp(530px, 34vw, 700px); }
+  #events .photo-grid { height: clamp(480px, 30vw, 640px); }
+  .film .photo-grid { height: clamp(470px, 30vw, 620px); }
+
+  .work-videos .work-stage { --card-width: clamp(285px, 16vw, 350px); --work-card-height: clamp(412px, 24vw, 480px); max-width: 1800px; height: calc(var(--work-card-height) + 60px); }
+  .work-videos .work-card { height: var(--work-card-height); }
+  .portfolio-photo-grid, .portfolio-tabs, .creative-process-inner, .testimonial-cards { max-width: var(--desktop-content); }
+  .portfolio-section, .creative-process { padding-block: clamp(76px, 5vw, 110px); }
+  .process-visual > img { height: clamp(410px, 26vw, 560px); }
+  .process-intro > p { max-width: 38ch; }
+  .testimonials-glass { padding-block: clamp(64px, 4vw, 96px); }
+  .testimonial-glass-card blockquote { max-width: 52ch; }
+  .booking-page { max-width: 1440px; }
+  footer { padding-inline: max(6%, calc((100vw - 1800px) / 2)); }
+}

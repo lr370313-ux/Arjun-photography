@@ -19,13 +19,13 @@ export function ServiceStack({ children }: { children: ReactNode }) {
       frame = 0;
       const elapsed = lastTime ? Math.min(64, time - lastTime) : 16;
       lastTime = time;
-      const blend = 1 - Math.exp(-elapsed / 240);
+      const blend = 1 - Math.exp(-elapsed / 120);
       let settling = false;
       const scroll = window.scrollY;
       for (const item of metrics) {
         const progress = motion.matches ? 1 : Math.min(1, Math.max(0, (scroll - item.start) / distance));
         const target = progress * progress * (3 - 2 * progress);
-        let value = item.previous < 0 || motion.matches ? target : item.previous + (target - item.previous) * blend;
+        let value = item.previous < 0 || motion.matches || progress === 1 ? target : item.previous + (target - item.previous) * blend;
         if (Math.abs(target - value) < .0005) value = target;
         else settling = true;
         if (value === item.previous) continue;
@@ -38,10 +38,9 @@ export function ServiceStack({ children }: { children: ReactNode }) {
     const schedule = () => { if (!frame) { lastTime = 0; frame = requestAnimationFrame(update); } };
     const measure = () => {
       if (disposed) return;
-      // Sticky offsetTop changes during scrolling. Cache normal-flow starts
-      // from the stack position and section heights instead.
+      // Finish each entrance before its section reaches the top of the viewport.
       let naturalTop = container.getBoundingClientRect().top + window.scrollY;
-      distance = Math.max(1, window.innerHeight * 1.2);
+      distance = Math.max(1, window.innerHeight * .65);
       metrics = [];
       for (const section of sections) {
         const height = section.offsetHeight;

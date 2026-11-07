@@ -1,7 +1,8 @@
 .service-stack { position: relative; isolation: isolate; }
 .service-stack > .collection {
-  position: sticky;
-  top: min(0px, calc(100svh - var(--service-height, 100svh)));
+  position: relative;
+  top: auto;
+  min-height: 100svh;
   background: #fdf7e9;
   box-shadow: none;
   border-top: 1px solid #95652f33;
@@ -10,7 +11,7 @@
 }
 .service-stack > .collection.reverse { background: #fff; }
 .service-stack > .collection::before {
-  content: '';
+  content: none;
   position: absolute;
   top: 0;
   left: 0;
